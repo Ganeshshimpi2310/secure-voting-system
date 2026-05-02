@@ -1,0 +1,536 @@
+§
+    QòiäS  ã                    óN  — d dl mZmZmZmZmZmZm Z mZ d dl	Z	d dl
+Z
+d dl
+mZ d dl
+Z
+d dlmZ d dlmZ d dlZ	 d dlZn
+# e$ r dZY nw xY wd dlmZ d d lmZmZ d dlZd dlmZ d d	lmZ d d
+lm Z m!Z!m"Z"m#Z#m$Z$m%Z% d d
+l&m'Z' d dl(m)Z)m*Z*m+Z+m,Z, d d
+l-m.Z.m/Z/m0Z0 d dl1Z1d dl2Z2d dl3m4Z4 d dl5m6Z6 d„ Z7 ee8¦  «        Z9ej:         ;                    d e1j<        d¦  «        ¦  «        e9_=        de9j>        d<   de9j>        d<   de9j>        d<   de9j>        d<   de9j>        d<    e2j?        e2j@        ¬¦  «          e2jA        e8¦  «        ZB ee9¦  «        ZC e e9¦  «        ZDdeD_E         e4e6e9¬¦  «        ZF ejG        e9j>        d         d¬ ¦  «          ejG        ejH         I                    e9j>        d         d!¦  «        d¬ ¦  «          ejG        e9j>        d         d¬ ¦  «          ejG        ejH         I                    e9j>        d         d!¦  «        d¬ ¦  «         ej:         ;                    d"d#¦  «        ZJ eKej:         ;                    d$d%¦  «        ¦  «        ZLej:         ;                    d&d'¦  «        ZMej:         ;                    d(d)¦  «        ZNej:         ;                    d*eM¦  «        ZOej:         ;                    d+d,¦  «        ZPej:         ;                    d-¦  «        ZQe9jR        d.„ ¦   «         ZS ejT        ¦   «         ZU eeU¦  «        ZVd/„ ZWg d0¢ZX G d1„ d2e!eCjY        ¦  «        ZZ G d3„ d4eCjY        ¦  «        Z[ G d5„ d6eCjY        ¦  «        Z\eDj]        d7„ ¦   «         Z^ G d8„ d9e'¦  «        Z_ G d:„ d;e'¦  «        Z` G d<„ d=e'¦  «        Za G d>„ d?e'¦  «        Zbe9 c                    d@¦  «        dA„ ¦   «         Zde9 c                    dBdCdDg¬E¦  «        eF e                    dF¦  «        dG„ ¦   «         ¦   «         Zfe9 c                    dHdCdDg¬E¦  «        eF e                    dI¦  «        dJ„ ¦   «         ¦   «         Zge9 c                    dK¦  «        dL„ ¦   «         Zhe9 c                    dMdCdDg¬E¦  «        dN„ ¦   «         Zie9 c                    dOdCdDg¬E¦  «        dP„ ¦   «         Zje9 c                    dQdCdDg¬E¦  «        e#dR„ ¦   «         ¦   «         Zke9 c                    dS¦  «        e#dT„ ¦   «         ¦   «         Zle9 c                    dUdCdDg¬E¦  «        e#eF e                    dV¦  «        dW„ ¦   «         ¦   «         ¦   «         Zme9 c                    dX¦  «        dY„ ¦   «         Zne9 c                    dZ¦  «        e#d[„ ¦   «         ¦   «         Zoe9 c                    d\dCdDg¬E¦  «        e#d]„ ¦   «         ¦   «         Zpe9 c                    d^dCdDg¬E¦  «        e#d_„ ¦   «         ¦   «         Zqe9 c                    d`dCdDg¬E¦  «        e#da„ ¦   «         ¦   «         Zre9 c                    db¦  «        e#dc„ ¦   «         ¦   «         Zsdd„ Zte9 c                    de¦  «        df„ ¦   «         Zue9 v                    dg¦  «        dh„ ¦   «         Zwe9 v                    di¦  «        dj„ ¦   «         Zxe8dkk    rÇe9 y                    ¦   «         5  eC z                    ¦   «          eXD ]SZ{e[j|         }                    e{¬l¦  «         ~                    ¦   «         s$eCj                              e[e{¬l¦  «        ¦  «         ŒTeCj         €                    ¦   «          ddd¦  «         n
+# 1 swxY w Y   e9                     d¬m¦  «         dS dS )né    )ÚFlaskÚrender_templateÚ requestÚredirectÚ sessionÚResponseÚflashÚ url_forN)ÚFernet)ÚMIMEText)Ú
+MIMEMultipart)Úsecure_filename)Úgenerate_password_hashÚcheck_password_hash)ÚStringIO)Ú
+SQLAlchemy)ÚLoginManagerÚ	UserMixinÚ
+login_userÚlogin_requiredÚ
+logout_userÚcurrent_user)Ú	FlaskForm)Ú
+StringFieldÚ
+PasswordFieldÚ
+SubmitFieldÚ
+SelectField)ÚDataRequiredÚLengthÚ EqualTo)Ú Limiter)Úget_remote_addressc                 ó    — t          | ¦  «        S ©N)r   )Úpasswords    úapp.pyÚ
+hash_passwordr'      s   € Ý
+! (Ñ
++Ô
++Ð+ó    Ú
+SECRET_KEYé    zstatic/images/uploadsÚ
+UPLOAD_FOLDERi   ÚMAX_CONTENT_LENGTHzsqlite:///voting.dbÚSQLALCHEMY_DATABASE_URIFÚSQLALCHEMY_TRACK_MODIFICATIONSTÚWTF_CSRF_ENABLED)ÚlevelÚlogin)Úapp)Úexist_okÚ
+candidatesÚ
+SMTP_SERVERzsmtp.gmail.comÚ	SMTP_PORTiK  Ú
+SMTP_USERNAMEzyour-email@gmail.comÚ
+SMTP_PASSWORDzyour-app-passwordÚ
+FROM_EMAILÚ
+CONTACT_EMAILzganeshshimpi9970@gmail.comÚOPENAI_API_KEYc                   ó  — g d¢} | D ]g}t           j                             t           j                             t          j        d         |¦  «        ¦  «        rdt
+          dd|› ¬¦  «        ic S Œhdt
+          dd ¬¦  «        iS )N)zlogo.pngzlogo.jpgz	logo.jpegzlogo.svgr+   Úlogo_urlÚstaticzimages/uploads/)Úfilenamezimages/logo.svg) ÚosÚpathÚexistsÚjoinr2   Úconfigr
+   )Ú
+logo_filesÚfiles     r&   Ú
+inject_logorG   ?   s’   € àBÐBÐB€JØð Vð VˆÝ
+
+Œ7>Š>"œ'Ÿ,š,¥s¤z°/Ô'BÀDÑIÔIÑ
+JÔ
+Jð 	VØ¥ ¨Ð;SÈTÐ;SÐ;SÐ TÑ TÔ TÐUÐUÐUÐUð	Và  Ð3DÐEÑEÔEÐ
+FÐFr(   c                  óT  — t           r t          sd S 	 t          t           _        t           j                             ddddœd| dœgdd ¬¦  «        }|j        d	         j        j                              ¦   «         S # t          $ r&}t           
+                    d
+|¦  «         Y d }~d S d }~ww xY w)
+Nz
+gpt-3.5-turboÚsystemz=You are a helpful support assistant for a voting application.)ÚroleÚ contentÚuseréô  gffffffæ?)ÚmodelÚmessagesÚ
+max_tokensÚ
+temperaturer   zAI assistant failed: %s)Úopenair;   Ú api_keyÚChatCompletionÚcreateÚ choicesÚ messagerK   ÚstripÚ	ExceptionÚloggerÚerror)ÚquestionÚresponseÚes      r&   Úask_air_   L   sÉ   € Ý
+ð ð ØˆtðÝ'ŒÝÔ(×/Ò/Ø!à!Ð.mÐnÐnØ¨HÐ5Ð5ðð Øð 0ñ 
+ô 
+ˆð Ô Ô"Ô*Ô2×8Ò8Ñ:Ô:Ð:øÝ
+ð ð ð ÝŠÐ.°Ñ2Ô2Ð2Øˆtˆtˆtˆtˆtøøøøðøøøs   ’A$A7 Á7
+B'ÂB"Â"B')
+z$Progressive Alliance - Sarah Johnsonz#Progressive Alliance - Michael Chenz&National Unity Party - David Rodriguezz$National Unity Party - Emma Thompsonz%Green Future Coalition - James Wilsonz"Green Future Coalition - Lisa Parkz%Liberty First Movement - Robert Davisz'Liberty First Movement - Maria Gonzalezz(People's Democratic Party - Ahmed Hassanz(People's Democratic Party - Jennifer Liuc                   ó  — e Zd Ze                     ej        d¬¦  «        Ze                     e                      d¦  «        dd¬¦  «        Ze                     e                      d¦  «        d¬¦  «        Z	e                     ej
+        d¬ ¦  «        Z
+e                     ej
+        d¬ ¦  «        Ze 
+                    dd	d¬
+¦  «        Zd
+S )ÚUserT©Ú
+primary_keyé–   F©ÚuniqueÚnullable©rg   ©Ú defaultÚVoterL   ©Ú backrefÚlazyN)Ú__name__Ú
+__module__Ú__qualname__ÚdbÚColumnÚ IntegerÚidÚStringÚusernamer%   Ú BooleanÚ	has_votedÚis_adminÚrelationshipÚvotes© r(   r&   ra   ra   o   sª   € € € € € Ø	
+Š2”:¨4ˆÑ	0Ô	0€BØyŠy˜Ÿš 3™œ°¸uˆyÑEÔE€HØyŠy˜Ÿš 3™œ°%ˆyÑ8Ô8€HØ—	’	˜"œ*¨e	Ñ4Ô4€IØyŠy˜œ¨UˆyÑ3Ô3€HØOŠO˜F¨F¸ˆOÑ>Ô>€E€E€Er(   ra   c                   óÌ   — e Zd Ze                     ej        d¬¦  «        Ze                     e                      d¦  «        dd¬¦  «        Ze 	                    dd d¬¦  «        Z
+d	S )
+Ú	CandidateTrb   rd   Fre   rk   Ú	candidaterl   N)
+ro   rp   rq   rr   rs   rt   ru   rv   Únamer{   r|   r}   r(   r&   r   r   w   s]   € € € € € Ø	
+Š2”:¨4ˆÑ	0Ô	0€BØ
+
+9Š9R—Y’Y˜s‘^”^¨D¸5ˆ9Ñ
+AÔ
+A€DØOŠO˜F¨K¸dˆOÑCÔC€E€E€Er(   r   c                   ól  — e Zd Ze                     ej        d¬¦  «        Ze                     ej        e                      d¦  «        d¬¦  «        Ze                     ej        e                      d¦  «        d¬¦  «        Z	e                     ej
+        ej
+                             ¦   «         ¬ ¦  «        Z
+dS )	rk   Trb   z user.idrh   zcandidate.idFri   N)ro   rp   rq   rr   rs   rt   ru   Ú
+ForeignKeyÚ user_idÚcandidate_idÚDateTimeÚfuncÚcurrent_timestampÚ
+created_atr}   r(   r&   rk   rk   |   s•   € € € € € Ø	
+Š2”:¨4ˆÑ	0Ô	0€BØiŠi˜œ
+ B§M¢M°)Ñ$<Ô$<ÀtˆiÑLÔL€GØ—9’9˜RœZ¨¯ª°~Ñ)FÔ)FÐQV9ÑWÔW€LØ—’˜2œ;°´ ×0IÒ0IÑ0KÔ0KÑLÔL€J€J€Jr(   rk   c                 óZ   — t           j                             t           | ¦  «        ¦  «        S r$   )ra   ÚqueryÚgetÚint©r„   s    r&   Ú	load_userr   ‚   s   € å
+Œ:>Š>#˜g™,œ,Ñ
+'Ô
+'Ð'r(   c                   óê   — e Zd Z ed e¦   «          edd¬¦  «        g¬¦  «        Z e d e¦   «          ed ¬¦  «        g¬¦  «        Z e d	 e¦   «          e	d
+¦  «        g¬¦  «        Z
+ e
+d
+¦  «        ZdS )
+ÚRegistrationFormÚUsernameé   rd   )ÚminÚmax©Ú
+validatorsÚPasswordé   ©r”   zConfirm Passwordr%   ÚRegisterN)
+ro   rp   rq   r   r   r   rw   r   r%   r    Úconfirm_passwordr   Úsubmitr}   r(   r&   r‘   r‘   ‡   s¤   € € € € € Øˆ{˜:°<°<±>´>À6À6ÈaÐUXÐCYÑCYÔCYÐ2ZÐ[Ñ[Ô[€HØˆ}˜Z°\°\±^´^ÀVÀVÐPQÀ]Á]Ä]Ð4SÐTÑTÔT€HØ$}Ð%7À\À\Á^Ä^ÐU\ÐU\Ð]gÑUhÔUhÐDiÐjÑjÔjÐØ
+ˆ[˜Ñ
+$Ô
+$€F€F€Fr(   r‘   c                   ó|   — e Zd Z ed e¦   «         g¬¦  «        Z ed e¦   «         g¬¦  «        Z  ed¦  «        Z	dS )Ú	LoginFormr’   r–   r˜   ÚLoginN)
+ro   rp   rq   r   r   rw   r   r%   r   r   r}   r(   r&   rŸ   rŸ      sW   € € € € € Øˆ{˜:°<°<±>´>Ð2BÐCÑCÔC€HØˆ}˜Z°\°\±^´^Ð4DÐEÑEÔE€HØ
+ˆ[˜Ñ
+!Ô
+!€F€F€Fr(   rŸ   c                   óP   — e Zd Z ed e¦   «         g¬¦  «        Z ed¦  «        Z dS )ÚVoteFormr   r–   rk   N)ro   rp   rq   r   r   r€   r   r   r}   r(   r&   r¢   r¢   ’   s:   € € € € € Ø
+˜K°\°\±^´^Ð4DÐEÑEÔE€IØ
+ˆ[˜Ñ
+ Ô
+ €F€F€Fr(   r¢   c                    óÒ   — e Zd Z ed e¦   «         g¬¦  «        Z ed e¦   «          ed¬¦  «        g¬¦  «        Z  ed e¦   «          ed ¦  «        g¬¦  «        Z	 e
+d¦  «        Z
+d	S )
+ÚChangePasswordFormzCurrent Passwordr–   zNew Passwordr™   rš   zConfirm New PasswordÚnew_passwordzChange PasswordN)ro   rp   rq   r   r   Úcurrent_passwordr   r¥   r    rœ   r   r   r}   r(   r&   r¤   r¤   –   s•   € € € € € Ø$}Ð%7À\À\Á^Ä^ÐDTÐUÑUÔUÐØ = ¸\¸\¹^¼^ÈVÈVÐXYÈ]É]Ì]Ð<[Ð\Ñ\Ô\€LØ$}Ð%;ÈÈÉÌÐY`ÐY`ÐaoÑYpÔYpÐHqÐrÑrÔrÐØ
+ˆ[Ð*Ñ
++Ô
++€F€F€Fr(   r¤   ú/c                  ó    — t          d¦  «        S )Nz
+index.html©r   r}   r(   r&   Úhomerª      ó   € å
+˜<Ñ
+(Ô
+(Ð(r(   z	/registerÚGETÚPOST)Ú methodsz5 per minutec                  óŒ  — t          ¦   «         } |                      ¦   «         r| j        j        }t	          | j        j        ¦  «        }t          j                              |¬¦  «         	                    ¦   «         rt          dd¦  «         n©| 
+                    ¦   «                              ¦   «         dk    rdnd}t
+          |||¬ ¦  «        }t          j                             |¦  «         t          j                             ¦   «          t          dd	¦  «         t#          t%          d
+¦  «        ¦  «        S t'          d
+| ¬¦  «        S )
+N©rw   zThat username is already taken.r[   Úadminé   r   )rw   r%   rz   z'Registration successful! Please log in.Ú successr1   z
+register.html©Úform)r‘   Úvalidate_on_submitrw   Údatar'   r%   ra   r‹   Ú	filter_byÚfirstr	   rX   Úlowerrr   r    ÚaddÚcommitr   r
+   r   )rµ   rw   r%   rz   rL   s        r&   Úregisterr½   ¡   s  € õ Ñ
+Ô
+€DØ 
+× Ò Ñ  Ô  ñ .Ø”=Ô%ˆÝ  ¤Ô!3Ñ4Ô4ˆå
+Œ:×
+Ò
+¨Ð
+Ñ
+2Ô
+2×
+8Ò
+8Ñ
+:Ô
+:ð 	.ÝÐ3°WÑ=Ô=Ð=Ð=à$ŸNšNÑ,Ô,×2Ò2Ñ4Ô4¸ Ò?Ð?qqÀQˆHÝ °HÀxÐPÑPÔPˆDÝŒJNŠN˜4Ñ Ô Ð ÝŒJ×ÒÑÔÐÝÐ;¸YÑGÔGÐGÝG GÑ,Ô,Ñ-Ô-Ð-å
+˜?°Ð
+6Ñ
+6Ô
+6Ð6r(   z/loginz
+10 per minutec                  óœ  — t          ¦   «         } |                      ¦   «         rš| j        j        }t          j                             |¬¦  «                              ¦   «         }|rJt          |j	        | j	        j        ¦  «        r+t          |¦  «         t          t          d¦  «        ¦  «        S t          dd¦  «         t          d| ¬¦  «        S ) Nr°   ÚvotezInvalid username or password.r[   z
+login.htmlr´   )rŸ   r¶   rw   r·   ra   r‹   r¸   r¹   r   r%   r   r   r
+   r	   r   )rµ   rw   rL   s      r&   r1   r1   ¶   s¶   € õ ‰;Œ;€DØ 
+× Ò Ñ  Ô  ð  <Ø”=Ô%ˆÝŒz×#Ò#¨XÐ#Ñ6Ô6×<Ò<Ñ>Ô>ˆØ
+ð 	<Õ'¨¬
+°t´}Ô7IÑJÔJð 	<ÝtÑÔÐÝG F™OœOÑ,Ô,Ð,åÐ1°7Ñ;Ô;Ð;å
+˜<¨dÐ
+3Ñ
+3Ô
+3Ð3r(   z/aboutc                  ó    — t          d¦  «        S )Nz
+about.htmlr©   r}   r(   r&   ÚaboutrÁ   Æ   r«   r(   z
+/assistantc                  óÜ   — d } d }t           j        dk    rGt           j                             dd¦  «                             ¦   «         }|rt
+          |¦  «        } | sd} t
+          d| |¬¦  «        S ) Nr­   r‹   Ú z»AI assistant is not configured yet. Set OPENAI_API_KEY in the environment to enable instant AI answers. You can also use the "Search online" button to look up your issue from your device.zassistant.html©r]   r‹   ) r   Úmethodrµ   rŒ   rX   r_   r   rÄ   s     r&   Ú	assistantrÆ   Ë   sz   € à€HØ€EÝ „~˜Ò Ð Ý”× Ò  ¨"Ñ-Ô-×3Ò3Ñ5Ô5ˆØ
+ð  	Ý˜e‘}”}ˆHØð 
+ðjð õ
+ Ð+°hÀeÐ
+LÑ
+LÔ
+LÐLr(   z/contactc                  óÈ  — t           j        dk    rÃt           j                             d¦  «        } t           j                             d¦  «        }t           j                             d¦  «        }| rS|rP|rM	 t	          ¦   «         }t
+          |d<   t          |d<   ||d <   d| › |d	<   d
+| › d
+|› d|› }|                      t          |d
+¦  «        ¦  «         t          j
+        t          t          ¦  «        }| 
+                    ¦   «          |                     t          t           ¦  «         |                     ¦   «         }|                     t
+          t          |¦  «         |                     ¦   «          t)          dd¦  «         nR# t*          $ r5} t,                               d| ¦  «         t)          dd¦  «         Y d } ~ nd } ~ ww xY wt)          dd¦  «         t1          d¦  «        S )Nr­   r   ÚemailrW   ÚFromÚTozReply-TozContact Form: Ú SubjectzName: z
+Email: z
+
+
+Message:
+Úplainz,Thanks! Your message has been sent directly.r³   zContact form failed: %szASorry, there was an error sending your message. Please try again.r[   zPlease fill in all fields.zcontact.html)r   rÅ   rµ   rŒ   r
+   r9   r:   Úattachr   Ú smtplibÚSMTPr5   r6   Ústarttlsr1   r7   r8   Ú	as_stringÚsendmailÚquitr	   rY   rZ   r[   r   )r   rÈ   ÚmsgÚ msg_objÚbodyÚserverÚtextr^   s           r&   Ú contactrÙ   Ü   sÑ  € å „~˜Ò Ñ ÝŒ|×Ò Ñ'Ô'ˆÝ”× Ò  Ñ)Ô)ˆÝŒl×Ò˜yÑ)Ô)ˆà
+ñ 	9Eñ 	9˜cñ 	9ð
+då'™/œ/ Ý", ˜‘Ý - ˜‘
+Ø&+ ˜
+Ñ#Ø%<°dÐ%<Ð%< ˜	Ñ"àI ÐIÐI¨uÐIÐIÀCÐIÐIØ—’x¨¨gÑ6Ô6Ñ7Ô7Ð7å œ¥kµ9Ñ=Ô=Ø—’Ñ!Ô!Ð!Ø—’]­MÑ:Ô:Ð:Ø×(Ò(Ñ*Ô*Ø—’¥
+­M¸4Ñ@Ô@Ð@Ø—
+’
+‘
+”
+
+åÐDÀiÑPÔPÐPÐPøÝð 
+dð 
+dð 
+dÝ—’Ð6¸Ñ:Ô:Ð:ÝÐYÐ[bÑcÔcÐcÐcÐcÐcÐcÐcøøøøð
+døøøõ 
+Ð.° Ñ8Ô8Ð8å
+˜>Ñ
+*Ô
+*Ð*s   Á9D	F Æ
+GÆ
++F=Æ=Gz/profilec                  óŠ  — t          ¦   «         } |                      ¦   «         r†t          t          j        | j        j        ¦  «        st          dd¦  «         nQt          | j	        j        ¦  «        t          _        t          j
+                             ¦   «          t          dd¦  «         t          d| t          j        ¬¦  «        S ) NzCurrent password is incorrect.r[   zPassword updated successfully!r³   zprofile.html)rµ   rw   )r¤   r¶   r   r   r%   r¦   r·   r	   r'   r¥   rr   r    r¼   r   rw   r´   s    r&   Ú profilerÛ      s¥   € õ Ñ
+Ô
+€DØ 
+× Ò Ñ  Ô  ð ?Ý"¥<Ô#8¸$Ô:OÔ:TÑUÔUð 	?ÝÐ2°GÑ<Ô<Ð<Ð<å$1°$Ô2CÔ2HÑ$IÔ$ILÔ!ÝŒJ×ÒÑÔÐÝÐ2°IÑ>Ô>Ð>å
+˜>°½|Ô?TÐ
+UÑ
+UÔ
+UÐUr(   z /logoutc                  óV   — t          ¦   «          t          t          d¦  «        ¦  «        S )Nrª   )r   r   r
+   r}   r(   r&   ÚlogoutrÝ     s!   € õ M„M€MÝ
+•G˜F‘O”OÑ
+$Ô
+$Ð$r(   z/votez
+60 per minutec            	      óÐ  — t          ¦   «         } d„ t          j                             ¦   «         D ¦   «         }d„ |D ¦   «         | j        _        t          j         }d }|rJt          j         	                    t          j
+        ¬¦  «         
+                    ¦   «         }|r|j        j        }|  
+                    ¦   «         rÓ|sÑt          j         	                    | j        j        ¬¦  «         
+                    ¦   «         }|rƒt          t          j
+        |j
+        ¬¦  «        }dt          _         t          j                             |¦  «         t          j                             ¦   «          d}|j        }t'          d d¦  «         nt'          d	d
+¦  «         d
+„ } i }t          j                             ¦   «         D ]¡}g d¢}	d }
+|	D ]v}
+|j                             d
+d¦  «        › |
+› }t*          j                             t*          j                             t2          j        d         d|¦  «        ¦  «        r d|› }
+ nŒw|
+sd | |j        ¦  «        › d}
+|
+||j        <   Œ¢t7          d| ||||¬¦  «        S )Nc                 ó   — g | ]	}|j         ‘Œ
+S r}   ©r   ©Ú.0Úcs     r&   ú
+<listcomp>zvote.<locals>.<listcomp>  s   € Ð8Ð8Ð8˜Q!”&Ð8Ð8Ð8r(   c                 ó   — g | ]}||f‘Œ S r}   r}   rá   s     r&   rä   zvote.<locals>.<listcomp>  s   € Ð9Ð9Ð9¨˜q !˜fÐ9Ð9Ð9r(   rŽ   rà   )r„   r…   TzVote submitted successfully!r³   zInvalid candidate.r[   c                 óŒ   — d                      d„ |                      ¦   «         D ¦   «         ¦  «                             dd¦  «        S )NrÃ   c              3   óN   K  — | ] }|                      ¦   «         s|d k    ¯|V — Œ!dS )ú N)Ú isalnumrá   s     r&   ú	<genexpr>z)vote.<locals>._slugify.<locals>.<genexpr>5  s3   è è € ÐJÐJ˜Q°!·)²)±+´+ÐJÀÀcÂÀqÀÀÀÀÐJÐJr(   rè   ú-)rC   rº   Ú replacerà   s    r&   Ú_slugifyzvote.<locals>._slugify4  s=   € ØwŠwÐJÐJ $§*¢*¡,¤,ÐJÑJÔJÑJÔJ×RÒRÐSVÐX[Ñ\Ô\Ð\r(   )z.pngz.jpgz.jpegú.svgrè   Ú_r+   r4   zimages/uploads/candidates/zimages/candidates/rî   z	vote.html)rµ   r4   Úcandidate_imagesÚvotedÚ	last_vote)r¢   r   r‹   Úallr€   rV   r   ry   rk   r¸   ru   r¹   r   r¶   r·   rr   r    r»   r¼   r	   rì   r@   rA   rB   rC   r2   rD   r   )
+rµ   r4   rñ   rò   Ú
+vote_recordr€   r¿   rí   rð   Ú
+photo_filesÚ
+photo_pathÚextr?   s
+                r&   r¿   r¿     sv  € õ ‰:Œ:€DØ8Ð8¥)¤/×"5Ò"5Ñ"7Ô"7Ð8Ñ8Ô8€JØ9Ð9¨jÐ9Ñ9Ô9€D„NÔåÔ"€EØ€Ià ð 3Ý”j×*Ò*µ<´?Ð*ÑCÔC×IÒIÑKÔKˆ
+Ø
+ð 	3Ø#Ô-Ô2ˆIà 
+× Ò Ñ  Ô  ð 
+1¨ð 
+1Ý”O×-Ò-°4´>Ô3FÐ-ÑGÔG×MÒMÑOÔOˆ	Ø
+ð 		1Ý¥¤¸i¼lÐKÑKÔKˆDØ%)LÔ"ÝŒJNŠN˜4Ñ Ô Ð ÝŒJ×ÒÑÔÐØˆEØ!œˆIÝÐ0°)Ñ<Ô<Ð<Ð<åÐ&¨ Ñ0Ô0Ð0ð]ð ]ð ]ð ÐÝ”_×(Ò(Ñ*Ô*ð 
+6ð 
+6ˆ	à7Ð7Ð7ˆ
+Øˆ
+Øð 	ð 	ˆCØ#œ.×0Ò0°°cÑ:Ô:ÐA¸CÐAÐAˆHÝŒw~Š~bœgŸlšl­3¬:°oÔ+FÈÐV^Ñ_Ô_Ñ`Ô`ð 
+ØD¸(ÐDÐD
+Øð
+ð ð 	MØL¨h¨h°y´~Ñ.FÔ.FÐLÐLÐLˆJØ+5Ð˜œÑ(Ð(å
+ØØ
+ØØ)ØØð
+ ñ  ô  ð  r(   z/resultsc            
+      óò  ‡ — t           j                             t          j        t           j                             t          j        ¦  «         	                    d¦  «        ¦  «         
+                    t          ¦  «         
+                    t          j        ¦  «                             t            
+                    d¦  «        t          j        ¦  «                             ¦   «         } d„ t          j                             ¦   «         D ¦   «         }| D ]\  }}||v r|||<   Œt           j                             t          j        t          j        t          j        ¦  «         
+                    t          t          j        t          j        k    ¦  «                             t          ¦  «                             t          j         
+                    ¦   «         ¦  «                             d¦  «                             ¦   «         }t+          |                     ¦   «         ¦  «        Š ˆ fd„|                     ¦   «         D ¦   «         }ddlm} t3          d |‰ |||                     ¦   «                              d¦  «        ¬	¦  «        S )
+Nr|   c                 ó   — i | ]
+}|j         d “Œ
+S ©r   rà   ©râ   r€   s     r&   ú
+<dictcomp>zresults.<locals>.<dictcomp>X  ó   € Ð
+GÐ
+GÐ
+G IˆiŒn˜aÐ
+GÐ
+GÐ
+Gr(   é   c           	      ól   •— i | ]0\  }}|‰d k    r"t          t          |‰z
+  dz  ¦  «        ¦  «        nd “Œ1S )r   éd   )r   Úround)râ   r€   ÚcountÚtotals      €r&   rü   zresults.<locals>.<dictcomp>e  sU   ø€ ð ð ð áˆIuð 	¸Àº	¸	•3•u˜e e™m¨sÑ2Ñ3Ô3Ñ4Ô4Ð4Àqðð ð r(   r   )Údatetimezresults.htmlz%Y-%m-%d %H:%M:%S)Úresultr  ÚpercentsÚrecentÚnow)rr   r    r‹   r   r   r‡   r  rk   ru   ÚlabelÚ	outerjoinÚgroup_byÚorder_byÚdescró   ra   rw   r‰   r„   rC   ÚlimitÚsumÚvaluesÚitemsr  r   r  Ústrftime)Ú
+votes_queryr  r   r|   r   r  r  r  s          @r&   Ú resultsr  O  sñ  ø€ õ ”*×"Ò"ÝŒÝ
+Œ 
+Š
+•d”gÑÔ×$Ò$ WÑ-Ô-ñô ÷  ‚i•o„o—h’hyœ|Ñ,Ô,¯XªXµb·g²g¸gÑ6FÔ6FÍ	ÌÑ-WÔ-W×X[ÒX[ÑX]ÔX]ð  ð HÐ
+Gµ´×1DÒ1DÑ1FÔ1FÐ
+GÑ
+GÔ
+G€FØ"ð !ð !‰
+ˆˆeØ
+6ˆ>ˆ>Ø ˆF4‰Løõ ŒZ×
+Ò
+ÝŒ
+ÝŒÝŒñ ô ÷  ‚i••d”l¥d¤gÒ-Ñ.Ô.¯tªtµI©¬¿xºxÍÌ×H\ÒH\ÑH^ÔH^Ñ?_Ô?_×`eÒ`eÐfhÑ`iÔ`i×jmÒjmÑjoÔjoð	 
+õ 
+—
+’
+‘”Ñ Ô €Eðð ð ð à &§¢¡¤ðñ ô €Hð
+ "Ð!Ð!Ð!Ð!Ð!å
+ØØØØØØLŠL‰NŒN×#Ò#Ð$7Ñ8Ô8ð
+ ñ  ô  ð  r(   z/adminc            	      ó  — t           j        st          t           d¦  «        ¦  «        S t          j                             t          j        t          j
+        t          j        ¦  «         
+                    t          t          j        t          j        k    ¦  «         
+                    t          ¦  «                             t          j                             ¦   «         ¦  «                             ¦   «         } t'          t          j                             t          j
+        t          j                             t          j        ¦  «        ¦  «                             t          ¦  «                             t          j        ¦  «                             t                               t          j                             t          j        ¦  «        ¦  «        t          j
+        ¦  «                             ¦   «         ¦  «        }t3          d| |¬¦  «        S )Nrª   z
+admin.html©Ú
+user_votesÚtotals)r   rz   r   r
+   rr   r    r‹   ra   rw   r   r   rk   r‰   rC   r„   ru   r  Úascró   Údictr‡   r  r
+  r
+  r
+  r   r  s     r&   Úadmin_dashboardr  v  sC  € õ Ô
+ ð )Ý  ™œÑ(Ô(Ð(õ ”×!Ò!ÝŒ
+ÝŒÝŒñ ô ÷  
+‚d4•”¥¤Ò(Ñ)Ô)¯$ª$­y©/¬/¿(º(Å4Ä=×CTÒCTÑCVÔCVÑ:WÔ:W×X[ÒX[ÑX]ÔX]ð	 õ •"”*×"Ò"ÝŒÝ
+Œ 
+Š
+•d”gÑÔñô ÷  ‚i•o„o—h’hyœ|Ñ,Ô,¯XªXµb·g²g½b¼g¿mºmÍDÌGÑ>TÔ>TÑ6UÔ6UÕW`ÔWeÑ-fÔ-f×gjÒgjÑglÔglñ nô n€Fõ
+ ˜<°JÀvÐ
+NÑ
+NÔ
+NÐNr(   z/admin/candidatesc                  ó  — t           j        st          t           d¦  «        ¦  «        S t          j        dk    rrt          j                              d¦  «        } t          j                              dd¦  «                             ¦   «         }| dk    r’|rt          j
+         
+                    |¬ ¦  «                             ¦   «         s]t          |¬ ¦  «        }t          j                             |¦  «         t          j                             ¦   «          t#          dd	¦  «         n‰| d
+k    rƒ|rt          j
+         
+                    |¬ ¦  «                             ¦   «         }|rMt          j                             |¦  «         t          j                             ¦   «          t#          d
+d	¦  «         d„ t          j
+                             t          j        ¦  «                             ¦   «         D ¦   «         }t-          d
+|¬¦  «        S )Nrª   r­   ÚactionÚcandidate_namerÃ   r»   rà   zCandidate added.r³   ÚremovezCandidate removed.c                 ó   — g | ]	}|j         ‘Œ
+S r}   rà   rá   s     r&   rä   z%manage_candidates.<locals>.<listcomp>£  ó   € ÐQÐQÐQ˜Q!”&ÐQÐQÐQr(   zmanage_candidates.html©r4   )r   rz   r   r
+   r   rÅ   rµ   rŒ   rX   r   r‹   r¸   r¹   rr   r    r»   r¼   r	   Údeleter  r   ró   r   )r  r  r€   r4   s       r&   Úmanage_candidatesr$  Œ  s£  € õ Ô
+ ð )Ý  ™œÑ(Ô(Ð(å „~˜Ò Ñ Ý”×!Ò! (Ñ+Ô+ˆÝ œ×)Ò)Ð*:¸BÑ?Ô?×EÒEÑGÔGˆà
+UŠ?ˆ?˜~ˆ?Ý”?×,Ò,°.Ð,ÑAÔA×GÒGÑIÔIð 
+5Ý%¨>Ð:Ñ:Ô:	Ý”
+—’˜yÑ)Ô)Ð)Ý”
+×!Ò!Ñ#Ô#Ð#ÝÐ(¨)Ñ4Ô4Ð4øØ
+xÒ
+Ð
+ NÐ
+Ý!œ×1Ò1°~Ð1ÑFÔF×LÒLÑNÔNˆIØð 
+7Ý”
+×!Ò! )Ñ,Ô,Ð,Ý”
+×!Ò!Ñ#Ô#Ð#ÝÐ*¨IÑ6Ô6Ð6àQÐQ¥)¤/×":Ò":½9¼>Ñ"JÔ"J×"NÒ"NÑ"PÔ"PÐQÑQÔQ€Jå
+Ð3À
+Ð
+KÑ
+KÔ
+KÐKr(   z/admin/upload-logoc                   ót  — t           j        st          t           d¦  «        ¦  «        S t          j        dk    rqdt          j        vr)t          dd¦  «         t          t          j        ¦  «        S t          j        d         } | j	        dk    r)t          dd¦  «         t          t          j        ¦  «        S | rÉt          | j	        h d £¦  «        r²t          d| j	                             d	d
+¦  «        d
+          
+                    ¦   «         z   ¦  «        }|                      t          j                             t$          j        d
+         |¦  «        ¦  «         t          dd
+¦  «         t          t           d¦  «        ¦  «        S t          dd¦  «         t          t          j        ¦  «        S t)          d¦  «        S )Nrª   r­   ÚlogoúNo file selectedr[   rÃ   ¾   ÚjpgÚpngÚsvgÚjpegzlogo.ú.r²   r+   zLogo uploaded successfullyr³   r  ú2Invalid file type. Please upload PNG, JPG, or SVG.zupload_logo.html)r   rz   r   r
+   r   rÅ   Úfilesr	   Úurlr?   Úallowed_filer   Úrsplitrº   Úsaver@   rA   rC   r2   rD   r   )rF   r?   s     r&   Ú
+upload_logor4  ¨  sp  € õ Ô
+ ð )Ý  ™œÑ(Ô(Ð(å „~˜Ò Ñ Ø
+œÐ
+&Ð
+&ÝÐ$ gÑ.Ô.Ð.ÝGœKÑ(Ô(Ð(ÝŒ}˜VÔ$ˆØ
+Œ=˜BÒ
+Ð
+ÝÐ$ gÑ.Ô.Ð.ÝGœKÑ(Ô(Ð(Ø
+ð  	)•L ¤Ð0MÐ0MÐ0MÑNÔNð  	)Ý& w°´×1EÒ1EÀcÈ1Ñ1MÔ1MÈaÔ1P×1VÒ1VÑ1XÔ1XÑ'XÑYÔYˆHØIŠI•b”g—l’l¥3¤:¨oÔ#>ÀÑIÔIÑJÔJÐJÝÐ.°	Ñ:Ô:Ð:ÝGÐ$5Ñ6Ô6Ñ7Ô7Ð7åÐFÈ ÑPÔPÐPÝGœKÑ(Ô(Ð(å
+Ð-Ñ
+.Ô
+.Ð.r(   z/admin/upload-candidate-photoc                  ón  — t           j        st          t           d¦  «        ¦  «        S d„ t          j                             t          j         ¦  «                             ¦   «         D ¦   «         } t          j
+        dk    r§t          j
+                             d¦  «        }dt          j
+        vr)t          dd ¦  «         t          t          j        ¦  «        S t          j
+        d         }|j        dk    r)t          dd ¦  «         t          t          j        ¦  «        S |ràt#          |j        h d	£¦  «        rÉt%          |                     d
+d
+¦  «        › d|j                             dd
+¦  «        d
+                              ¦   «         › ¦  «        }|                     t.          j                             t4          j        d         d|¦  «        ¦  «         t          dd¦  «         t          t           d¦  «        ¦  «        S t          dd ¦  «         t          t          j        ¦  «        S t9          d| ¬¦  «        S )Nrª   c                 ó   — g | ]	}|j         ‘Œ
+S r}   rà   rá   s     r&   rä   z*upload_candidate_photo.<locals>.<listcomp>È  r!  r(   r­   r€   Úphotor'  r[   rÃ   r(  rè   rï   r-  r²   r+   r4   z%Candidate photo uploaded successfullyr³   r  r.  zupload_candidate_photo.htmlr"  )r   rz   r   r
+   r   r‹   r  r   ró   r   rÅ   rµ   rŒ   r/  r	   r0  r?   r1  r   rì   r2  rº   r3  r@   rA   rC   r2   rD   r   )r4   r  rF   r?   s       r&   Úupload_candidate_photor8  Â  sÙ  € õ Ô
+ ð )Ý  ™œÑ(Ô(Ð(àQÐQ¥)¤/×":Ò":½9¼>Ñ"JÔ"J×"NÒ"NÑ"PÔ"PÐQÑQÔQ€Jå „~˜Ò Ñ Ý œ×)Ò)¨+Ñ6Ô6ˆØ
+'œ-Ð
+'Ð
+'ÝÐ$ gÑ.Ô.Ð.ÝGœKÑ(Ô(Ð(ÝŒ}˜WÔ%ˆØ
+Œ=˜BÒ
+Ð
+ÝÐ$ gÑ.Ô.Ð.ÝGœKÑ(Ô(Ð(Ø
+ð  	)•L ¤Ð0MÐ0MÐ0MÑNÔNð  	)Ý&¨.×*@Ò*@ÀÀcÑ*JÔ*JÐ'vÐ'vÈTÌ]×MaÒMaÐbeÐghÑMiÔMiÐjkÔMl×MrÒMrÑMtÔMtÐ'vÐ'vÑwÔwˆHØIŠI•b”g—l’l¥3¤:¨oÔ#>ÀÈhÑWÔWÑXÔXÐXÝÐ9¸9ÑEÔEÐEÝGÐ$5Ñ6Ô6Ñ7Ô7Ð7åÐFÈ ÑPÔPÐPÝGœKÑ(Ô(Ð(å
+Ð8ÀZÐ
+PÑ
+PÔ
+PÐPr(   z /exportc            	      ó   — t           j        st          t           d¦  «        ¦  «        S t          j                             t          j        t          j
+        t          j        ¦  «         
+                    t          t          j        t          j        k    ¦  «                             t          ¦  «                             t          j                             ¦   «         ¦  «                             ¦   «         } t)          t          j                             t          j
+        t          j                             t          j        ¦  «        ¦  «         
+                    t          ¦  «                             t          j        ¦  «                             t                               t          j                             t          j        ¦  «        ¦  «        t          j
+        ¦  «                             ¦   «         ¦  «        }t1          ¦   «         }t3          j        |¦  «        }|                     g d¢¦  «         | D ]"\  }}}|                     |pd|pd|g¦  «         Œ#|                     g ¦  «         |                     dg¦  «         |                     dd g¦  «         |                     ¦   «         D ]\  }} |                     || g¦  «         Œ|                     d¦  «         t=          |                     ¦   «         d	d
+d
+i¬¦  «        S )
+Nrª   )r’   r   Ú	TimestampÚ	AnonymousÚ UnknownÚ Summaryr   ÚVotesr   ztext/csvzContent-Dispositionz'attachment; filename=voting_results.csv)ÚmimetypeÚ headers) r   rz   r   r
+   rr   r    r‹   ra   rw   r   r   rk   r‰   r
+  r„   ru   rC   r  r
+  ró   r  r‡   r  r
+  r   ÚcsvÚwriterÚwriterowr  Úseekr   Úgetvalue)r|   r  ÚoutputrB  rw   r€   Ú	timestampr  s           r&   Ú
+export_csvrH  ß  sU  € õ Ô
+ ð )Ý  ™œÑ(Ô(Ð(õ 
+ŒJ×ÒÝŒ
+ÝŒÝŒñ 
+ô 
+÷  ‚i••d”l¥d¤gÒ-Ñ.Ô.¯tªtµI©¬¿xºxÍÌ×H\ÒH\ÑH^ÔH^Ñ?_Ô?_×`cÒ`cÑ`eÔ`eð	 
+õ •"”*×"Ò"ÝŒÝ
+Œ 
+Š
+•d”gÑÔñô ÷  ‚i•o„o—h’hyœ|Ñ,Ô,¯XªXµb·g²g½b¼g¿mºmÍDÌGÑ>TÔ>TÑ6UÔ6UÕW`ÔWeÑ-fÔ-f×gjÒgjÑglÔglñ nô n€Fõ ‰ZŒZ€FÝ
+ŒZ˜Ñ
+Ô
+€Fð 
+‡O‚OÐ:Ð:Ð:Ñ;Ô;Ð;ð +0ð Vð VÑ&ˆ)˜YØŠ˜Ð0 [°)Ð2H¸yÈ)ÐTÑUÔUÐUÐUð 
+‡O‚OBÑÔÐØ
+‡O‚OYKÑ Ô Ð Ø
+‡O‚O[ 'Ð*Ñ+Ô+Ð+Ø"ŸLšL™NœNð ,ð ,Ñˆ	5ØŠ˜ EÐ*Ñ+Ô+Ð+Ð+à
+‡K‚KN„N€Nå
+ØŠÑÔØØ&Ð(QÐRð ñ ô ð r(   c                 ój   — d| v o/|                       dd¦  «        d                              ¦   «         |v S )Nr-  r²   )r2  rº   )r?   Úallowed_extensionss     r&   r1  r1  
+  s6   € Ø
+(ˆ?Ð
+W˜xŸš¨s°AÑ6Ô6°qÔ9×?Ò?ÑAÔAÐEWÐWÐWr(   z/api/resultsc                  óÞ  — t           j                             t          j        t           j                             t          j        ¦  «         	                    d¦  «        ¦  «         
+                    t          ¦  «         
+                    t          j        ¦  «                             t            
+                    d¦  «        t          j        ¦  «                             ¦   «         } d„ t          j                             ¦   «         D ¦   «         }| D ]\  }}||v r|||<   Œd„ |                     ¦   «         D ¦   «         }t!          |                     ¦   «         ¦  «        }t%          |¦  «        }|||dœS )Nr|   c                 ó   — i | ]
+}|j         d “Œ
+S rú   rà   rû   s     r&   rü   zapi_results.<locals>.<dictcomp>  rý   r(   c                 óD   — g | ]}|                      d ¦  «        d         ‘ŒS )z - r²   )Úsplit)râ   r   s     r&   rä   zapi_results.<locals>.<listcomp>  s)   € Ð
+=Ð
+=Ð
+= tˆdjŠj˜ÑÔ Ô"Ð
+=Ð
+=Ð
+=r(   )Úlabelsr·   r  )rr   r    r‹   r   r   r‡   r  rk   ru   r	  r
+  r
+  r  r
+  ró   ÚkeysÚlistr  r  ) r  r  r   r|   rO  r·   r  s           r&   Ú
+api_resultsrR    s  € õ ”*×"Ò"ÝŒÝ
+Œ 
+Š
+•d”gÑÔ×$Ò$ WÑ-Ô-ñô ÷  ‚i•o„o—h’hyœ|Ñ,Ô,¯XªXµb·g²g¸gÑ6FÔ6FÍ	ÌÑ-WÔ-W×X[ÒX[ÑX]ÔX]ð  ð HÐ
+Gµ´×1DÒ1DÑ1FÔ1FÐ
+GÑ
+GÔ
+G€FØ"ð !ð !‰
+ˆˆeØ
+6ˆ>ˆ>Ø ˆF4‰Løà
+=Ð
+=¨v¯{ª{©}¬}Ð
+=Ñ
+=Ô
+=€FÝ
+—
+’
+‘”Ñ
+ Ô
+ €DÝ‰IŒI€Eà d°UÐ
+;Ð
+;Ð;r(   é”  c                  ó.   — t          ddddd¬¦  «        dfS ) Nú
+error.htmlrS  zPage not foundz,The page you are looking for does not exist.z/Please check the URL or return to the homepage.©ÚcodeÚtitlerW   Ú
+suggestionr©   ©r[   s    r&   Úpage_not_foundr[  %  s2   € å
+ØØ
+ØØ>ØDð
+ñ ô ð 
+ð
+
+ð 
+r(   rM   c                  ó.   — t          ddddd¬¦  «        dfS ) NrU  rM   zServer errorz Something went wrong on our end.z:Try again later or contact support if the issue continues.rV  r©   rZ  s    r&   Úinternal_server_errorr]  /  s2   € å
+ØØ
+ØØ2ØOð
+ñ ô ð 
+ð
+
+ð 
+r(   Ú__main__rà   )Údebug)‚Úflaskr   r   r   r   r    r   r	   r
+   Ú sqlite3Ú hashlibÚcryptography.fernetr
+   rÎ   Úemail.mime.textr   Úemail.mime.multipartr
+   r@   rR   Ú
+ImportErrorÚwerkzeug.utilsr   Úwerkzeug.securityr   r   rA  Úior   Úflask_sqlalchemyr   Ú
+flask_loginr   r   r   r   r   r   Ú	flask_wtfr   Ú wtformsr   r   r   r   Úwtforms.validatorsr   r   r    Ú secretsÚ loggingÚ
+flask_limiterr!   Úflask_limiter.utilr"   r'   ro   r2   Ú environrŒ   Ú	token_hexÚ
+secret_keyrD   Ú
+basicConfigÚINFOÚ	getLoggerrZ   rr   Ú
+login_managerÚ
+login_viewÚ limiterÚmakedirsrA   rC   r5   r   r6   r7   r8   r9   r:   r;   Úcontext_processorrG   Úgenerate_keyÚkeyÚcipherr_   Ú
+CANDIDATESÚModelra   r   rk   Ú
+user_loaderr   r‘   rŸ   r¢   r¤   Úrouterª   r  r½   r1   rÁ   rÆ   rÙ   rÛ   rÝ   r¿   r  r  r$  r4  r8  rH  r1  rR  Úerrorhandlerr[  r]  Ú
+app_contextÚ
+create_allr€   r‹   r¸   r¹   r»   r¼   Úrunr}   r(   r&   ú<module>r‰     s¨
+  ðØ ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ð ^Ø €€€Ø €€€Ø &Ð &Ð &Ð &Ð &Ð &Ø €€€Ø $Ð $Ð $Ð $Ð $Ð $Ø .Ð .Ð .Ð .Ð .Ð .Ø 	€	€	€	ðØ€M€M€M€MøØ ð ð ð Ø
+€F€F€Fðøøøà *Ð *Ð *Ð *Ð *Ð *Ø IÐ IÐ IÐ IÐ IÐ IÐ IÐ IØ 
+€
+€
+€
+Ø Ð Ð Ð Ð Ð Ø 'Ð 'Ð 'Ð 'Ð 'Ð 'Ø fÐ fÐ fÐ fÐ fÐ fÐ fÐ fÐ fÐ fÐ fÐ fÐ fÐ fÐ fÐ fØ Ð Ð Ð Ð Ð Ø HÐ HÐ HÐ HÐ HÐ HÐ HÐ HÐ HÐ HÐ HÐ HØ <Ð <Ð <Ð <Ð <Ð <Ð <Ð <Ð <Ð <Ø €€€Ø €€€Ø !Ð !Ð !Ð !Ð !Ð !Ø 1Ð 1Ð 1Ð 1Ð 1Ð 1ð,ð ,ð ,ð  €eˆHo„o€Ø”—’ Ð.?¨gÔ.?ÀÑ.CÔ.CÑDÔD€„Ø5€„
+ˆ?Ñ Ø#3€„
+Ð
+Ñ  Ø(=€„
+Ð
+$Ñ %Ø/4€„
+Ð
++Ñ ,Ø!%€„
+Ð
+Ñ ð € Ô ˜'œ,Ð 'Ñ 'Ô 'Ð 'Ø	ˆÔ	˜8Ñ	$Ô	$€à€Z_„_€Ø˜SÑ!Ô!€
+Ø"€
+Ô Ø
+ˆ'Ð$¨#Ð
+.Ñ
+.Ô
+.€ ð €„
+ˆCŒJÔ'°$Ð 7Ñ 7Ô 7Ð 7Ø 
+€„
+ˆBŒGLŠL˜œ OÔ4°lÑCÔCÈdÐ SÑ SÔ SÐ SØ 
+€„
+ˆCŒJÔ'°$Ð 7Ñ 7Ô 7Ð 7Ø 
+€„
+ˆBŒGLŠL˜œ OÔ4°lÑCÔCÈdÐ SÑ SÔ SÐ Sð ŒjnŠn˜]Ð,<Ñ=Ô=€
+ØˆC”
+—’˜{¨CÑ0Ô0Ñ1Ô1€	Ø”
+—’˜Ð0FÑGÔG€
+Ø”
+—’˜Ð0CÑDÔD€
+Ø
+ŒZ^Š^˜L¨-Ñ
+8Ô
+8€
+Ø”
+—’˜Ð0LÑMÔM€
+Ø”—’Ð 0Ñ1Ô1€ð ÔðGð Gñ ÔðGð  €fÔÑÔ€Ø	ˆ‰Œ€ðð ð ð*
+ð 
+ð 
+€
+ð?ð ?ð ?ð ?ð ?ˆ9b”hñ ?ô ?ð ?ðDð Dð Dð Dð D”ñ Dô Dð Dð
+Mð Mð Mð Mð Mˆ2Œ8ñ Mô Mð Mð Ôð(ð (ñ Ôð(ð%ð %ð %ð %ð %yñ %ô %ð %ð"ð "ð "ð "ð "	ñ "ô "ð "ð
+!ð !ð !ð !ð !ˆyñ !ô !ð !ð,ð ,ð ,ð ,ð ,˜ñ ,ô ,ð ,ð ‡‚ˆ3„ð)ð )ñ „ð)ð ‡‚ˆ;  v €Ñ/Ô/Ø‡‚ˆ~ÑÔð7ð 7ñ Ôñ 0Ô/ð7ð& ‡‚ˆ8˜e F˜^€Ñ,Ô,Ø‡‚ˆÑÔð
+4ð 
+4ñ  Ôñ -Ô,ð
+4ð ‡‚ˆ8ÑÔð)ð )ñ Ôð)ð ‡‚ˆ< %¨ €Ñ0Ô0ð
+Mð 
+Mñ 1Ô0ð
+Mð  ‡‚ˆ:  f˜~€Ñ.Ô.ð +ð  +ñ /Ô.ð +ðF ‡‚ˆ:  v˜€Ñ/Ô/Øð
+Vð 
+Vñ „ñ 0Ô/ð
+Vð ‡‚ˆ9ÑÔØð%ð %ñ „ñ Ôð%ð
+ ‡‚ˆ7˜U 6˜N€Ñ+Ô+ØØ‡‚ˆÑÔð3ð 3ñ  Ôñ „ñ ,Ô+ð3ðl ‡‚ˆ:ÑÔð#ð #ñ Ôð#ðL ‡‚ˆ8ÑÔØðOð Oñ „ñ ÔðOð( ‡‚Ð
+¨°¨€Ñ8Ô8ØðLð Lñ „ñ 9Ô8ðLð4 ‡‚Ð
+¨%°¨€Ñ9Ô9Øð/ð /ñ „ñ :Ô9ð/ð0 ‡‚Ð
+*°U¸F°O€ÑDÔDØðQð Qñ „ñ EÔDðQð6 ‡‚ˆ9ÑÔØð)ð )ñ „ñ Ôð)ðXXð Xð Xð ‡‚ˆ>ÑÔð<ð <ñ Ôð<ð& ×Ò#ÑÔð 
+ð  
+ñ Ôð 
+ð ×Ò#ÑÔð 
+ð  
+ñ Ôð 
+ð ˆzÒÐØ	ŠÑ	Ô	ð ð Ø
+
+Š
+‰Œˆà#ð 	:ð 	:ˆIØ”?×,Ò,°)Ð,Ñ<Ô<×BÒBÑDÔDð 
+:Ø”
+—’˜y˜y¨iÐ8Ñ8Ô8Ñ9Ô9Ð9øØ
+Œ
+×ÒÑÔÐð
+ð ð ñ ô ð ð ð ð ð ð øøøð ð ð ð ð ‡G‚G$€GÑÔÐÐÐð Ðs"   ¸= ½ A ÁA Ù2B\Ü\ Ü	\ 
