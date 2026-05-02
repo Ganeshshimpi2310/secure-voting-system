@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard | Secure Vote System{% endblock %}
+
+{% block content %}
+<section class="page-section">
+<div class="card card--results">
+    <h2>Admin Dashboard</h2>
+    <p class="muted">Manage votes, export results, and review vote history.</p>
+
+    <div class="dashboard-meta">
+        <div class="dashboard-meta__item">
+            <span class="dashboard-meta__label">Total votes</span>
+            <span class="dashboard-meta__value">{{ totals.values() | sum }}</span>
+        </div>
+        <div class="dashboard-meta__item">
+            <span class="dashboard-meta__label">Export</span>
+            <a class="btn btn-primary" href="/export">Download CSV</a>
+        </div>
+    </div>
+
+    <div class="admin-actions">
+        <h3>Admin Actions</h3>
+        <a class="btn btn-secondary" href="/admin/candidates">Manage Candidates</a>
+        <a class="btn btn-secondary" href="/admin/upload-logo">Upload Logo</a>
+        <a class="btn btn-secondary" href="/admin/upload-candidate-photo">Upload Candidate Photo</a>
+    </div>
+
+    <div class="vote-history">
+        <h3>All recorded votes</h3>
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Candidate</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user, candidate, timestamp in user_votes %}
+                <tr>
+                    <td>{{ user or 'Anonymous' }}</td>
+                    <td>
+                        {% if candidate %}
+                            <strong>{{ candidate.split(' - ')[1] }}</strong><br>
+                            <small>{{ candidate.split(' - ')[0] }}</small>
+                        {% else %}
+                            Unknown
+                        {% endif %}
+                    </td>
+                    <td>{{ timestamp }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</section>
+{% endblock %}

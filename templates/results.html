@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block title %}Results | Secure Vote System{% endblock %}
+
+{% block content %}
+<section class="page-section">
+<div class="card card--results">
+    <h2>Voting Dashboard</h2>
+    <p class="muted">Live overview of how each candidate is performing.</p>
+
+    {% if not result %}
+        <p class="muted">No votes yet. Be the first to cast a vote!</p>
+    {% else %}
+        <div class="results-grid">
+            {% for candidate, votes in result.items() %}
+            <div class="result-row">
+                <div class="result-label">
+                    <strong>{{ candidate.split(' - ')[1] }}</strong><br>
+                    <small>{{ candidate.split(' - ')[0] }}</small>
+                </div>
+                <div class="result-bar">
+                    <div class="result-fill" style="width: {{ percents[candidate] }}%;"></div>
+                </div>
+                <div class="result-count">{{ votes }} votes</div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="chart-card">
+            <h3>Visual breakdown</h3>
+            <canvas id="votesChart" height="120"></canvas>
+        </div>
+
+        <div class="dashboard-meta">
+            <div class="dashboard-meta__item">
+                <span class="dashboard-meta__label">Total votes</span>
+                <span class="dashboard-meta__value">{{ total }}</span>
+            </div>
+            <div class="dashboard-meta__item">
+                <span class="dashboard-meta__label">Last updated</span>
+                <span class="dashboard-meta__value">{{ now }}</span>
+            </div>
+        </div>
+
+        <div class="vote-history">
+            <h3>Recent votes</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Candidate</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for username, candidate, timestamp in recent %}
+                    <tr>
+                        <td>{{ username }}</td>
+                        <td>{{ candidate }}</td>
+                        <td>{{ timestamp }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script>
+        const chartData = {
+            labels: [{% for candidate in result.keys() %}'{{ candidate.split(' - ')[1] }}'{% if not loop.last %}, {% endif %}{% endfor %}],
+            datasets: [{
+                label: 'Votes',
+                data: [{% for votes in result.values() %}{{ votes }}{% if not loop.last %}, {% endif %}{% endfor %}],
+                backgroundColor: [
+                    'rgba(79, 70, 229, 0.65)',
+                    'rgba(236, 72, 153, 0.65)',
+                    'rgba(34, 197, 94, 0.65)',
+                    'rgba(245, 158, 11, 0.65)',
+                    'rgba(14, 165, 233, 0.65)',
+                ],
+                borderColor: [
+                    'rgba(79, 70, 229, 0.9)',
+                    'rgba(236, 72, 153, 0.9)',
+                    'rgba(34, 197, 94, 0.9)',
+                    'rgba(245, 158, 11, 0.9)',
+                    'rgba(14, 165, 233, 0.9)',
+                ],
+                borderWidth: 1,
+                borderRadius: 12,
+                barPercentage: 0.6,
+                categoryPercentage: 0.6,
+            }]
+        };
+
+        let chart = new Chart(document.getElementById('votesChart'), {
+            type: 'bar',
+            data: chartData,
+            plugins: [ChartDataLabels],
+            options: {
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                        titleColor: '#fff',
+                        bodyColor: '#fff',
+                    },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top',
+                        color: '#fff',
+                        font: {
+                            weight: 'bold',
+                            size: 14
+                        },
+                        formatter: function(value) {
+                            return value;
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: 'rgba(243, 244, 246, 0.85)' },
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255, 255, 255, 0.08)' },
+                        ticks: { color: 'rgba(243, 244, 246, 0.85)', precision: 0 },
+                    },
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+            },
+        });
+
+        // Auto-refresh every 30 seconds
+        setInterval(async () => {
+            try {
+                const response = await fetch('/api/results');
+                const data = await response.json();
+                chart.data.labels = data.labels;
+                chart.data.datasets[0].data = data.data;
+                chart.update();
+                document.querySelector('.dashboard-meta__value').textContent = data.total;
+            } catch (e) {
+                console.log('Update failed:', e);
+            }
+        }, 30000);
+    </script>
+</section>
+{% endblock %}

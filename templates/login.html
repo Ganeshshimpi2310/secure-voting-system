@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Login | Secure Vote System{% endblock %}
+
+{% block content %}
+<section class="auth-page">
+    <div class="card card--form">
+        <h2>Sign in to Secure Vote System</h2>
+        <p class="muted">Enter your credentials to access voting and results.</p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert--{{ 'error' if category == 'error' else 'success' }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="post" class="form">
+            {{ form.hidden_tag() }}
+            <label>
+                Username
+                {{ form.username(class="form-control") }}
+                {% if form.username.errors %}
+                    <span class="error">{{ form.username.errors[0] }}</span>
+                {% endif %}
+            </label>
+            <label>
+                Password
+                {{ form.password(class="form-control") }}
+                {% if form.password.errors %}
+                    <span class="error">{{ form.password.errors[0] }}</span>
+                {% endif %}
+            </label>
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
+
+        <p class="muted">New here? <a href="{{ url_for('register') }}">Create an account</a>.</p>
+    </div>
+</section>
+{% endblock %}

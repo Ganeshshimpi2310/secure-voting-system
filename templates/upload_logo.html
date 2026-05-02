@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Logo{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Upload Company Logo</h1>
+    <p>Upload a new logo for the Secure Vote System. Supported formats: PNG, JPG, SVG.</p>
+
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="logo">Select Logo File:</label>
+            <input type="file" id="logo" name="logo" accept=".png,.jpg,.jpeg,.svg" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload Logo</button>
+    </form>
+
+    <a href="/admin" class="btn btn-secondary">Back to Admin Dashboard</a>
+</div>
+{% endblock %}

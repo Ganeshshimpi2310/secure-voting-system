@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Secure Vote System{% endblock %}</title>
+
+    <script>
+        (function() {
+            const saved = localStorage.getItem('electionTheme');
+            if (saved) {
+                document.documentElement.classList.toggle('dark', saved === 'dark');
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/">
+                <img class="brand-logo" src="{{ logo_url }}" alt="" aria-hidden="true">
+                <span>Secure Vote System</span>
+            </a>
+
+            <nav class="nav" aria-label="Primary navigation">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/vote">Vote</a>
+                <a href="/results">Results</a>
+                <a href="/assistant">AI Assistant</a>
+                {% if current_user.is_authenticated and current_user.is_admin %}
+                    <a href="/admin">Admin</a>
+                    <a href="/admin/candidates">Candidates</a>
+                {% endif %}
+                {% if current_user.is_authenticated %}
+                    <a href="/profile">Profile</a>
+                    <span class="nav-user">Hi, {{ current_user.username }}</span>
+                    <a class="btn btn-ghost" href="/logout">Logout</a>
+                {% else %}
+                    <a class="btn btn-secondary" href="/login">Login</a>
+                    <a class="btn btn-primary" href="/register">Register</a>
+                {% endif %}
+                <button id="theme-toggle" class="btn btn-ghost" type="button" aria-label="Toggle theme">Dark mode</button>
+            </nav>
+        </div>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert--{{ 'error' if category == 'error' else 'success' if category == 'success' else 'info' }}" style="margin: 1rem auto; max-width: 800px;">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <main class="site-main container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-col">
+                <h3>Secure Vote System</h3>
+                <p>A secure voting platform built to help teams and communities make decisions with confidence.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/vote">Vote</a></li>
+                    <li><a href="/results">Results</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Secure Vote System. Built with ❤️.</p>
+        </div>
+    </footer>
+
+    <script>
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const getActiveTheme = () => {
+            const saved = localStorage.getItem('electionTheme');
+            if (saved) return saved;
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+            return 'light';
+        };
+        const setTheme = (mode) => {
+            document.documentElement.classList.toggle('dark', mode === 'dark');
+            localStorage.setItem('electionTheme', mode);
+            if (themeToggle) themeToggle.textContent = mode === 'dark' ? 'Light mode' : 'Dark mode';
+        };
+
+        setTheme(getActiveTheme());
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+                setTheme(next);
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

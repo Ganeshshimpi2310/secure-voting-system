@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}AI Assistant | Secure Vote System{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="card card--form assistant-card">
+        <h2>AI Assistant</h2>
+        <p class="muted">Ask any question about the voting system, and get instant guidance. Use the search button to look up issues online from your device.</p>
+
+        <form method="post" class="form assistant-form">
+            <label>
+                Describe your issue or question
+                <textarea id="query" name="query" rows="5" required>{{ query or '' }}</textarea>
+            </label>
+            <div class="assistant-actions">
+                <button class="btn btn-primary" type="submit">Ask AI</button>
+                <button class="btn btn-secondary" type="button" id="search-online">Search online</button>
+            </div>
+        </form>
+
+        {% if response %}
+        <div class="assistant-response">
+            <h3>Assistant response</h3>
+            <div class="assistant-message">{{ response | replace('\n','<br>') | safe }}</div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<script>
+document.getElementById('search-online').addEventListener('click', function() {
+    const q = document.getElementById('query').value.trim();
+    if (!q) {
+        alert('Enter a question or issue to search online.');
+        return;
+    }
+    window.open('https://www.google.com/search?q=' + encodeURIComponent(q), '_blank');
+});
+</script>
+{% endblock %}

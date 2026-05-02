@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | Secure Vote System{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="card card--form">
+        <h2>Contact us</h2>
+        <p class="muted">Send your issue directly, and it will be delivered to Ganesh's mailbox at <strong>ganeshshimpi9970@gmail.com</strong>.</p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert--{{ 'error' if category == 'error' else 'success' }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="post" class="form">
+            <label>
+                Name
+                <input type="text" name="name" required>
+            </label>
+            <label>
+                Email
+                <input type="email" name="email" required>
+            </label>
+            <label>
+                Message
+                <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send message</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

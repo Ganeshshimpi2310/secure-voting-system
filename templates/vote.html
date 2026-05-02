@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Cast your vote | Secure Vote System{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="card card--form">
+        <h2>Cast your vote</h2>
+        <p class="muted">Select the candidate you'd like to support.</p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert--{{ 'error' if category == 'error' else 'success' }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% if voted %}
+            <div class="alert" style="background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3); color: rgba(34,197,94,0.92);">
+                Thank you! Your vote for <strong>{{ last_vote }}</strong> has been recorded.
+            </div>
+            <div class="hero-actions">
+                <a class="btn btn-secondary" href="{{ url_for('results') }}">View results</a>
+                <a class="btn btn-ghost" href="{{ url_for('home') }}">Back to home</a>
+            </div>
+        {% else %}
+            <form method="post" class="vote-form">
+                {{ form.hidden_tag() }}
+                <div class="candidate-grid">
+                    {% for candidate in candidates %}
+                    <label class="candidate-card">
+                        <input type="radio" name="candidate" value="{{ candidate }}" required>
+                        <div class="candidate-avatar">
+                            <img class="candidate-avatar-img" src="{{ url_for('static', filename=candidate_images[candidate]) }}" alt="" aria-hidden="true" onerror="this.src='{{ url_for('static', filename='images/candidate-avatar.svg') }}'">
+                            <span class="candidate-initial">{{ candidate[0] }}</span>
+                        </div>
+                        <div class="candidate-details">
+                            <h3>{{ candidate.split(' - ')[1] }}</h3>
+                            <p>{{ candidate.split(' - ')[0] }}</p>
+                        </div>
+                    </label>
+                    {% endfor %}
+                </div>
+                <button class="btn btn-primary" type="submit">Submit vote</button>
+            </form>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

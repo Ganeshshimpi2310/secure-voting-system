@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Candidate Photo{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Upload Candidate Photo</h1>
+    <p>Upload a photo for a candidate. Supported formats: PNG, JPG, SVG.</p>
+
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="candidate">Select Candidate:</label>
+            <select id="candidate" name="candidate" required>
+                <option value="">-- Choose Candidate --</option>
+                {% for candidate in candidates %}
+                <option value="{{ candidate }}">{{ candidate }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="photo">Select Photo File:</label>
+            <input type="file" id="photo" name="photo" accept=".png,.jpg,.jpeg,.svg" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload Photo</button>
+    </form>
+
+    <a href="/admin" class="btn btn-secondary">Back to Admin Dashboard</a>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Manage Candidates | Secure Vote System{% endblock %}
+
+{% block content %}
+<section class="page-section">
+<div class="card card--form">
+    <h2>Manage Candidates</h2>
+    <p class="muted">Add or remove candidates from the election.</p>
+
+    <div class="admin-actions">
+        <h3>Add Candidate</h3>
+        <form method="POST" style="margin-bottom: 2rem;">
+            <input type="hidden" name="action" value="add">
+            <div class="form-group">
+                <label for="candidate_name">Candidate Name:</label>
+                <input type="text" id="candidate_name" name="candidate_name" required placeholder="Enter candidate name">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Candidate</button>
+        </form>
+
+        <h3>Remove Candidate</h3>
+        <form method="POST">
+            <input type="hidden" name="action" value="remove">
+            <div class="form-group">
+                <label for="candidate_name">Select Candidate to Remove:</label>
+                <select id="candidate_name" name="candidate_name" required>
+                    <option value="">-- Choose Candidate --</option>
+                    {% for candidate in candidates %}
+                    <option value="{{ candidate }}">{{ candidate }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-danger">Remove Candidate</button>
+        </form>
+    </div>
+
+    <div class="candidate-list">
+        <h3>Current Candidates</h3>
+        {% if candidates %}
+        <ul class="candidate-items">
+            {% for candidate in candidates %}
+            <li class="candidate-item">
+                <strong>{{ candidate.split(' - ')[1] }}</strong><br>
+                <small>{{ candidate.split(' - ')[0] }}</small>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No candidates added yet.</p>
+        {% endif %}
+    </div>
+
+    <a href="/admin" class="btn btn-secondary">Back to Admin Dashboard</a>
+</div>
+</section>
+{% endblock %}

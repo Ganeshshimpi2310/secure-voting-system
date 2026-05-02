@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Profile | Secure Vote System{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="card card--form">
+    <h2>Your Profile</h2>
+    <p class="muted">Manage your account settings.</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert--{{ 'error' if category == 'error' else 'success' }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" class="form">
+        {{ form.hidden_tag() }}
+        <label>
+            Username
+            <input type="text" value="{{ username }}" disabled>
+        </label>
+        <label>
+            Current Password
+            {{ form.current_password(class="form-control") }}
+            {% if form.current_password.errors %}
+                <span class="error">{{ form.current_password.errors[0] }}</span>
+            {% endif %}
+        </label>
+        <label>
+            New Password
+            {{ form.new_password(class="form-control") }}
+            {% if form.new_password.errors %}
+                <span class="error">{{ form.new_password.errors[0] }}</span>
+            {% endif %}
+        </label>
+        <label>
+            Confirm New Password
+            {{ form.confirm_password(class="form-control") }}
+            {% if form.confirm_password.errors %}
+                <span class="error">{{ form.confirm_password.errors[0] }}</span>
+            {% endif %}
+        </label>
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+</div>
+</section>
+{% endblock %}

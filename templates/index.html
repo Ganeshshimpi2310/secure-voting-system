@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Secure Vote System{% endblock %}
+
+{% block content %}
+<section class="hero fade-in">
+    <div class="hero-content">
+        <h1>Modern voting for teams & communities</h1>
+        <p>Built to be secure, simple, and accessible, Secure Vote System lets you run transparent elections in minutes.</p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="/register">Get started</a>
+            <a class="btn btn-secondary" href="/vote">View ballot</a>
+        </div>
+    </div>
+
+    <figure class="hero-illustration" aria-hidden="true">
+        <img src="{{ url_for('static', filename='images/hero-illustration.svg') }}" alt="Illustration of voting dashboard" loading="lazy">
+    </figure>
+
+    <div class="features">
+        <div class="feature-card fade-in" style="animation-delay: 0.15s;">
+            <img class="feature-icon" src="{{ url_for('static', filename='images/feature-security.svg') }}" alt="Security icon" loading="lazy">
+            <h3>Secure by design</h3>
+            <p>Every vote is recorded and verifiable. Keep your elections fair and auditable with built-in safeguards.</p>
+        </div>
+        <div class="feature-card fade-in" style="animation-delay: 0.25s;">
+            <img class="feature-icon" src="{{ url_for('static', filename='images/feature-analytics.svg') }}" alt="Analytics icon" loading="lazy">
+            <h3>Real-time results</h3>
+            <p>Watch outcomes update instantly with live charts and dashboards that keep everyone informed.</p>
+        </div>
+        <div class="feature-card fade-in" style="animation-delay: 0.35s;">
+            <img class="feature-icon" src="{{ url_for('static', filename='images/feature-admin.svg') }}" alt="Admin tools icon" loading="lazy">
+            <h3>Admin tools</h3>
+            <p>Manage candidates, export results, and stay in control with a clean, easy-to-use dashboard.</p>
+        </div>
+    </div>
+
+    <div class="callout">
+        <h2>Ready to run your next vote?</h2>
+        <p>Create an account in seconds and start collecting votes today.</p>
+        <div class="callout-actions">
+            <a class="btn btn-primary" href="/register">Create account</a>
+            <a class="btn btn-ghost" href="/login">Log in</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
